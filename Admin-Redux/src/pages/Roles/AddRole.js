@@ -20,7 +20,7 @@ import Dropzone from "react-dropzone"
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"
 
-class EcommerceAddProduct extends Component {
+class AddRole extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -255,4 +255,4 @@ class EcommerceAddProduct extends Component {
   }
 }
 
-export default EcommerceAddProduct
+export default AddRole

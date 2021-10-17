@@ -50,36 +50,34 @@ class EcommerceOrders extends Component {
           ),
         },
         {
-          dataField: "orderId",
-          text: "Order ID",
+          dataField: "productCode",
+          text: "Product Code",
           sort: true,
           formatter: (cellContent, row) => (
             <Link to="#" className="text-body fw-bold">
-              {row.orderId}
+              {row.productCode}
             </Link>
           ),
         },
         {
-          dataField: "billingName",
-          text: "Billing Name",
+          dataField: "productName",
+          text: "Product Name",
           sort: true,
         },
         {
-          dataField: "orderdate",
-          text: "Date",
+          dataField: "brandName",
+          text: "Brand Name",
           sort: true,
-          formatter: (cellContent, row) => (
-            this.handleValidDate(row.orderdate)
-          ),
         },
+        
         {
-          dataField: "total",
-          text: "Total",
+          dataField: "Price",
+          text: "Price",
           sort: true,
         },
         {
-          dataField: "paymentStatus",
-          text: "Payment Status",
+          dataField: "Status",
+          text: "Status",
           sort: true,
           formatter: (cellContent, row) => (
             <Badge
@@ -87,26 +85,11 @@ class EcommerceOrders extends Component {
               color={row.badgeclass}
               pill
             >
-              {row.paymentStatus}
+              {row.Status}
             </Badge>
           ),
         },
-        {
-          dataField: "paymentMethod",
-          isDummyField: true,
-          text: "Payment Method",
-          sort: true,
-          formatter: (cellContent, row) => (
-            <>
-              <i className={
-                (row.paymentMethod !== 'COD') ?
-                  'fab fa-cc-' + this.toLowerCase1(row.paymentMethod) + " me-1"
-                  : 'fab fas fa-money-bill-alt me-1'
-              } />{" "}
-              {row.paymentMethod}
-            </>
-          ),
-        },
+        
         {
           dataField: "view",
           isDummyField: true,
@@ -229,11 +212,12 @@ class EcommerceOrders extends Component {
     this.setState({
       orders: {
         id: order.id,
-        orderId: order.orderId,
-        billingName: order.billingName,
+        productCode: order.productCode,
+        productName: order.productName,
+        productName: order.productName,
         orderdate: order.orderdate,
-        total: order.total,
-        paymentStatus: order.paymentStatus,
+        Price: order.Price,
+        Status: order.Status,
         paymentMethod: order.paymentMethod,
         badgeclass: order.badgeclass
       },
@@ -253,11 +237,12 @@ class EcommerceOrders extends Component {
     if (isEdit) {
       const updateOrder = {
         id: orders.id,
-        orderId: values.orderId,
-        billingName: values.billingName,
+        productCode: values.productCode,
+        productName: values.productName,
+        brandName: values.brandName,
         orderdate: values.orderdate,
-        total: values.total,
-        paymentStatus: values.paymentStatus,
+        Price: values.Price,
+        Status: values.Status,
         paymentMethod: values.paymentMethod,
         badgeclass: values.badgeclass
       };
@@ -268,11 +253,12 @@ class EcommerceOrders extends Component {
 
       const newOrder = {
         id: Math.floor(Math.random() * (30 - 20)) + 20,
-        orderId: values["orderId"],
-        billingName: values["billingName"],
+        productCode: values["productCode"],
+        productName: values["productName"],
+        brandName: values["brandName"],
         orderdate: values["orderdate"],
-        total: values["total"],
-        paymentStatus: values["paymentStatus"],
+        Price: values["Price"],
+        Status: values["Status"],
         paymentMethod: values["paymentMethod"],
         badgeclass: values['badgeclass']
       };
@@ -283,10 +269,7 @@ class EcommerceOrders extends Component {
     this.toggle();
   };
 
-  handleValidDate = (date) => {
-    const date1 = moment(new Date(date)).format('DD MMM Y');
-    return date1;
-  };
+ 
 
   render() {
     const { orders } = this.props;
@@ -303,7 +286,7 @@ class EcommerceOrders extends Component {
     };
 
     const defaultSorted = [{
-      dataField: 'orderId',
+      dataField: 'productCode',
       order: 'desc'
     }];
 
@@ -401,69 +384,69 @@ class EcommerceOrders extends Component {
 
                                           <div className="mb-3">
                                             <AvField
-                                              name="orderId"
-                                              label="Order Id"
+                                              name="productCode"
+                                              label="Product Code"
                                               type="text"
-                                              errorMessage="Invalid orderId"
+                                              errorMessage="Invalid productCode"
                                               validate={{
                                                 required: { value: true },
                                               }}
-                                              value={this.state.orders.orderId || ""
+                                              value={this.state.orders.productCode || ""
                                               }
                                             />
                                           </div>
                                           <div className="mb-3">
                                             <AvField
-                                              name="billingName"
-                                              label="Billing Name"
+                                              name="productName"
+                                              label="Product Name"
                                               type="text"
-                                              errorMessage="Invalid Billing Name"
+                                              errorMessage="Invalid Product Name"
                                               validate={{
                                                 required: { value: true },
                                               }}
-                                              value={this.state.orders.billingName || ""}
+                                              value={this.state.orders.productName || ""}
                                             />
                                           </div>
                                           <div className="mb-3">
                                             <AvField
-                                              name="orderdate"
-                                              label="Date"
-                                              type="date"
-                                              errorMessage="Invalid Date"
-                                              validate={{
-                                                required: { value: true },
-                                              }}
-
-                                              value={this.state.orders.orderdate || ""}
-                                            />
-                                          </div>
-                                          <div className="mb-3">
-                                            <AvField
-                                              name="total"
-                                              label="Total"
+                                              name="brandName"
+                                              label="Brand Name"
                                               type="text"
-                                              errorMessage="Invalid Total"
+                                              errorMessage="Invalid Brand Name"
                                               validate={{
                                                 required: { value: true },
                                               }}
-                                              value={this.state.orders.total || ""}
+                                              value={this.state.orders.brandName || ""}
+                                            />
+                                          </div>
+                                          
+                                          <div className="mb-3">
+                                            <AvField
+                                              name="Price"
+                                              label="Price"
+                                              type="text"
+                                              errorMessage="Invalid Price"
+                                              validate={{
+                                                required: { value: true },
+                                              }}
+                                              value={this.state.orders.Price || ""}
                                             />
                                           </div>
                                           <div className="mb-3">
                                             <AvField
-                                              name="paymentStatus"
-                                              label="Payment Status"
+                                              name="Status"
+                                              label="Status"
                                               type="select"
                                               id="status1"
                                               className="form-select"
-                                              errorMessage="Invalid Payment Status"
+                                              errorMessage="Invalid Status"
                                               validate={{
                                                 required: { value: true },
                                               }}
-                                              value={this.state.orders.paymentStatus || "Paid"}
+                                              value={this.state.orders.Status || "Paid"}
                                             >
-                                              <option>Paid</option>
-                                              <option>Chargeback</option>
+                                              <option>Active</option>
+                                              <option>Delete</option>
                                               <option>Refund</option>
                                             </AvField>
                                           </div>
@@ -484,24 +467,7 @@ class EcommerceOrders extends Component {
                                               <option>warning</option>
                                             </AvField>
                                           </div>
-                                          <div className="mb-3">
-                                            <AvField
-                                              name="paymentMethod"
-                                              label="Payment Method"
-                                              type="select"
-                                              className="form-select"
-                                              errorMessage="Invalid Payment Method"
-                                              validate={{
-                                                required: { value: true },
-                                              }}
-                                              value={this.state.orders.paymentMethod || "Mastercard"}
-                                            >
-                                              <option>Mastercard</option>
-                                              <option>Visa</option>
-                                              <option>Paypal</option>
-                                              <option>COD</option>
-                                            </AvField>
-                                          </div>
+                                         
                                         </Col>
 
                                       </Row>
