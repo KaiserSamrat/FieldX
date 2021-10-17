@@ -20,7 +20,7 @@ import {
   deleteOrder
 } from "store/actions"
 
-import EcommerceOrdersModal from "../Ecommerce/EcommerceOrders/EcommerceOrdersModal"
+import ProductListModal from "../Ecommerce/ProductList/ProductListModal"
 
 class LatestTranaction extends Component {
   constructor(props) {
@@ -171,7 +171,7 @@ class LatestTranaction extends Component {
 
     return (
       <React.Fragment>
-        <EcommerceOrdersModal
+        <ProductListModal
           isOpen={this.state.viewmodal}
           toggle={this.toggleViewModal}
         />

@@ -27,9 +27,9 @@ import {
   deleteOrder
 } from "store/actions";
 
-import EcommerceOrdersModal from "./EcommerceOrdersModal";
+import ProductListModal from "./ProductListModal";
 
-class EcommerceOrders extends Component {
+class ProductList extends Component {
   constructor(props) {
     super(props);
     this.node = React.createRef();
@@ -296,7 +296,7 @@ class EcommerceOrders extends Component {
 
     return (
       <React.Fragment>
-        <EcommerceOrdersModal
+        <ProductListModal
           isOpen={this.state.viewmodal}
           toggle={this.toggleViewModal}
         />
@@ -509,7 +509,7 @@ class EcommerceOrders extends Component {
   }
 }
 
-EcommerceOrders.propTypes = {
+ProductList.propTypes = {
   orders: PropTypes.array,
   onGetOrders: PropTypes.func,
   onAddNewOrder: PropTypes.func,
@@ -532,4 +532,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(EcommerceOrders));
+)(withRouter(ProductList));

@@ -138,7 +138,7 @@ class SidebarContent extends Component {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/ecommerce-orders">{this.props.t("Product List")}</Link>
+                    <Link to="/ecommerce-productlist">{this.props.t("Product List")}</Link>
                   </li>
 
                   <li>
@@ -171,7 +171,7 @@ class SidebarContent extends Component {
                 </Link>
               </li>
               <li>
-                <Link to="/user-list">
+                <Link to="/user-list"  className="has-arrow">
                   <i className="bx bx-user-circle" />
                   <span className="badge rounded-pill bg-success float-end">
 
@@ -195,7 +195,7 @@ class SidebarContent extends Component {
 
 
               <li>
-                <Link to="/#">
+                <Link to="/#"  className="has-arrow">
                   <i className="bx bx-user-circle" />
                   <span className="badge rounded-pill bg-success float-end">
 
@@ -216,79 +216,47 @@ class SidebarContent extends Component {
                       {this.props.t("Recover Password")}
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/pages-recoverpw-2">
-                      {this.props.t("Recover Password 2")}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/auth-lock-screen">
-                      {this.props.t("Lock Screen")}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/auth-lock-screen-2">
-                      {this.props.t("Lock Screen 2")}
-                    </Link>
-                  </li>
+                 
+              
                   <li>
                     <Link to="/page-confirm-mail">
                       {this.props.t("Confirm Mail")}
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/page-confirm-mail-2">
-                      {this.props.t("Confirm Mail 2")}
-                    </Link>
-                  </li>
+                  
                   <li>
                     <Link to="/auth-email-verification">
                       {this.props.t("Email Verification")}
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/auth-email-verification-2">
-                      {this.props.t("Email Verification 2")}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/auth-two-step-verification">
-                      {this.props.t("Two Step Verification")}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/auth-two-step-verification-2">
-                      {this.props.t("Two Step Verification 2")}
-                    </Link>
-                  </li>
+                
+                 
                 </ul>
               </li>
-
-
-
-
-
 
 
               <li>
                 <Link to="/#" className="has-arrow">
                   <i className="bx bx-map" />
-                  <span>{this.props.t("Maps")}</span>
+                  <span>{this.props.t("Geo Information")}</span>
                 </Link>
                 <ul className="sub-menu" aria-expanded="false">
                   <li>
-                    <Link to="/maps-google">{this.props.t("Google Maps")}</Link>
+                    <Link to="/Geo-details">{this.props.t("Geo Details")}</Link>
                   </li>
                   <li>
-                    <Link to="/maps-vector">{this.props.t("Vector Maps")}</Link>
+                    <Link to="/Geo-add">{this.props.t("Add New Geo")}</Link>
                   </li>
                   <li>
-                    <Link to="/maps-leaflet">
-                      {this.props.t("Leaflet Maps")}
+                    <Link to="/routes-add">
+                      {this.props.t("Add New Routes")}
                     </Link>
                   </li>
                 </ul>
               </li>
+
+
+
 
             </ul>
           </div>

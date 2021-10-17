@@ -339,7 +339,7 @@ class Navbar extends Component {
                           >
                             {this.props.t("Product Details")}
                           </Link>
-                          <Link to="/ecommerce-orders" className="dropdown-item">
+                          <Link to="/ecommerce-productlist" className="dropdown-item">
                             {this.props.t("Orders")}
                           </Link>
                           <Link

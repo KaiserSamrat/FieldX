@@ -14,18 +14,20 @@ import AddUser from '../pages/User/AddUser'
 
 //Projects
 
-import ProjectsOverview from "../pages/Projects/ProjectOverview/projects-overview"
-import ProjectsCreate from "../pages/Projects/projects-create"
+
 
 //Ecommerce Pages
 import EcommerceProducts from "../pages/Ecommerce/EcommerceProducts/index"
 import EcommerceProductDetail from "../pages/Ecommerce/EcommerceProducts/EcommerceProductDetail"
-import EcommerceOrders from "../pages/Ecommerce/EcommerceOrders/index"
+import ProductList from "../pages/Ecommerce/ProductList/index"
 
 import EcommerceCart from "../pages/Ecommerce/EcommerceCart"
 import EcommerceCheckout from "../pages/Ecommerce/EcommerceCheckout"
 import EcommerceShops from "../pages/Ecommerce/EcommerceShops/index"
 import EcommerceAddProduct from "../pages/Ecommerce/EcommerceAddProduct"
+//Geo Information
+import AddGeo from '../pages/GeoInformation/AddGeo'
+import AddRoute from '../pages/GeoInformation/AddRoute'
 
 // Authentication related pages
 import Login from "../pages/Authentication/Login"
@@ -57,10 +59,6 @@ import Dashboard from "../pages/Dashboard/index"
 
 
 
-// Maps
-import MapsGoogle from "../pages/Maps/MapsGoogle"
-import MapsVector from "../pages/Maps/MapsVector"
-import MapsLeaflet from "../pages/Maps/MapsLeaflet"
 
 
 
@@ -89,7 +87,7 @@ const authProtectedRoutes = [
   { path: "/ecommerce-products", component: EcommerceProducts },
   { path: "/ecommerce-product-details/:id", component: EcommerceProductDetail },
 
-  { path: "/ecommerce-orders", component: EcommerceOrders },
+  { path: "/ecommerce-productlist", component: ProductList },
  
   { path: "/ecommerce-cart", component: EcommerceCart },
   { path: "/ecommerce-checkout", component: EcommerceCheckout },
@@ -101,20 +99,14 @@ const authProtectedRoutes = [
 
 
 
-  //Projects
  
-  { path: "/projects-overview", component: ProjectsOverview },
-  { path: "/projects-overview/:id", component: ProjectsOverview },
-  { path: "/projects-create", component: ProjectsCreate },
-
 
   
   
 
-  // Maps
-  { path: "/maps-google", component: MapsGoogle },
-  { path: "/maps-vector", component: MapsVector },
-  { path: "/maps-leaflet", component: MapsLeaflet },
+  // Geo Information
+  { path: "/Geo-add", component: AddGeo  },
+  { path: "/routes-add", component: AddRoute  },
 
   // User
   { path: "/user-list", component: UserList  },

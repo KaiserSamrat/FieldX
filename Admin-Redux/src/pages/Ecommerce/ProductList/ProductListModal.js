@@ -11,7 +11,7 @@ import {
 import img7 from "../../../assets/images/product/img-7.png"
 import img4 from "../../../assets/images/product/img-4.png"
 
-const EcommerceOrdersModal = props => {
+const ProductListModal = props => {
   const { isOpen, toggle } = props
   return (
     <Modal
@@ -107,9 +107,9 @@ const EcommerceOrdersModal = props => {
   )
 }
 
-EcommerceOrdersModal.propTypes = {
+ProductListModal.propTypes = {
   toggle: PropTypes.func,
   isOpen: PropTypes.bool,
 }
 
-export default EcommerceOrdersModal
+export default ProductListModal

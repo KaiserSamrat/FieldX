@@ -12,9 +12,7 @@ import {
     Button,
     Form,
     Input,
-    InputGroupAddon,
-    InputGroupText,
-    InputGroup,
+    
 } from "reactstrap"
 
 //Import Breadcrumb
@@ -26,7 +24,7 @@ class AddUser extends Component {
             <React.Fragment>
                 <div className="page-content">
                     <MetaTags>
-                        <title>Form Layouts | Skote - React Admin & Dashboard Template</title>
+                        <title>FieldX | Add User</title>
                     </MetaTags>
                     <Container fluid={true} >
                         <Breadcrumbs title="Add New User" breadcrumbItem="Add New User" />
