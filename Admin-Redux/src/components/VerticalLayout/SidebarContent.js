@@ -145,7 +145,7 @@ class SidebarContent extends Component {
                 </ul>
               </li>
               
-              <li>
+              {/* <li>
                 <Link to="/#" className="has-arrow">
                   <i className="bx bx-store" />
                   <span>{this.props.t("Store")}</span>
@@ -171,7 +171,7 @@ class SidebarContent extends Component {
                     </Link>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li>
                 <Link to="/#" className="has-arrow">
                   <i className="bx bx-store" />
@@ -263,6 +263,30 @@ class SidebarContent extends Component {
                   </li>
                   </ul>
               </li>
+              <li>
+                <Link to="/info-office"  className="has-arrow">
+                  <i className="bx bx-user-circle" />
+                  <span className="badge rounded-pill bg-success float-end">
+
+                  </span>
+                  <span>{this.props.t("Office Information")}</span>
+                </Link>
+                <ul className="sub-menu" aria-expanded="false">
+                  <li>
+                    <Link to="/info-office">
+                      {this.props.t("Office Info")}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/address-office">
+                      {this.props.t("Office Address")}
+                    </Link>
+                  </li>
+                  
+                  
+                  </ul>
+              </li>
+
 
 
 

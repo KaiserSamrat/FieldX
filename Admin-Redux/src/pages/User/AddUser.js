@@ -14,12 +14,30 @@ import {
     Input,
     
 } from "reactstrap"
+import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { addNewUser } from "../../store/users/action"
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"
 
-class AddUser extends Component {
-    render() {
+const AddUser = () =>  {
+    
+
+    {
+        const dispatch = useDispatch()
+        const history = useHistory()
+       
+        function handleSubmit(event, errors, values) {
+            event.preventDefault()
+            setloading(true)
+            
+            dispatch(addNewUser(obj, history))
+            console.log("all values", values)
+            console.log("all values", obj)
+          }
+        
         return (
             <React.Fragment>
                 <div className="page-content">
@@ -34,7 +52,7 @@ class AddUser extends Component {
                                     <CardBody >
                                         <CardTitle className="h4 mb-4">Add User</CardTitle>
 
-                                        <Form >
+                                        <Form onSubmit={handleSubmit} >
                                             <Row>
                                                 <Col md={6}>
                                                     <FormGroup className="mb-3">

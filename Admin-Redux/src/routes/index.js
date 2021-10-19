@@ -67,7 +67,8 @@ import Dashboard from "../pages/Dashboard/index"
 
 
 
-
+//Office
+import InfoOffice from '../pages/Office/InfoOffice'
 
 
 
@@ -111,7 +112,9 @@ const authProtectedRoutes = [
 { path: "/analytic-brand", component: AnalyticsBrand   },
 { path: "/list-unit", component: ListBrand  },
  
+//Office-Information
 
+{ path: "/info-office", component: InfoOffice  },
   
   
 
