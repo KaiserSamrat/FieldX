@@ -1,8 +1,9 @@
 import React from "react"
 import { Redirect } from "react-router-dom"
 
-// Pages Component
-
+// Brand Component
+import ListBrand from '../pages/OverView/ListBrand/ListBrand'
+import AnalyticsBrand from '../pages/OverView/ListBrand/AnalyticsBrand'
 
 
 
@@ -104,9 +105,11 @@ const authProtectedRoutes = [
 
 
  
+//OverView-Information
 
-
-
+{ path: "/list-brand", component: ListBrand  },
+{ path: "/analytic-brand", component: AnalyticsBrand   },
+{ path: "/list-unit", component: ListBrand  },
  
 
   
