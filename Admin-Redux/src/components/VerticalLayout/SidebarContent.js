@@ -141,14 +141,35 @@ class SidebarContent extends Component {
                     <Link to="/ecommerce-productlist">{this.props.t("Product List")}</Link>
                   </li>
 
+                 
                   <li>
-                    <Link to="/ecommerce-cart">{this.props.t("Cart")}</Link>
+                    <Link to="/ecommerce-shops">{this.props.t("Shops")}</Link>
                   </li>
                   <li>
-                    <Link to="/ecommerce-checkout">
-                      {this.props.t("Checkout")}
+                    <Link to="/ecommerce-add-product">
+                      {this.props.t("Add Product")}
                     </Link>
                   </li>
+                </ul>
+              </li>
+              
+              <li>
+                <Link to="/#" className="has-arrow">
+                  <i className="bx bx-store" />
+                  <span>{this.props.t("Store")}</span>
+                </Link>
+                <ul className="sub-menu" aria-expanded="false">
+                  <li>
+                    <Link to="/store-list">
+                      {this.props.t("Store List")}
+                    </Link>
+                  </li>
+                 
+                  <li>
+                    <Link to="/add-newStore">{this.props.t("Add New Store")}</Link>
+                  </li>
+
+                 
                   <li>
                     <Link to="/ecommerce-shops">{this.props.t("Shops")}</Link>
                   </li>
@@ -241,6 +262,26 @@ class SidebarContent extends Component {
                   <span>{this.props.t("Geo Information")}</span>
                 </Link>
                 <ul className="sub-menu" aria-expanded="false">
+                <li>
+                    <Link to="/add-area">{this.props.t("Add Area")}</Link>
+                  </li>
+                  <li>
+                    <Link to="/add-region">{this.props.t("Add Region")}</Link>
+                  </li>
+                  <li>
+                    <Link to="/add-territory">{this.props.t("Add Territory")}</Link>
+                  </li>
+                  <li>
+                    <Link to="/list-area">{this.props.t("Area List")}</Link>
+                  </li>
+                 
+                  <li>
+                    <Link to="/list-region">{this.props.t("Region List")}</Link>
+                  </li>
+                  
+                  <li>
+                    <Link to="/list-territory">{this.props.t("Add Area")}</Link>
+                  </li>
                   <li>
                     <Link to="/Geo-details">{this.props.t("Geo Details")}</Link>
                   </li>

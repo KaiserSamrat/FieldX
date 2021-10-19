@@ -31,7 +31,7 @@ import ProductListModal from "./ProductListModal";
 
 class ProductList extends Component {
   constructor(props) {
-    super(props);
+    super(props);yar
     this.node = React.createRef();
     this.state = {
       viewmodal: false,

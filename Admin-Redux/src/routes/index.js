@@ -28,6 +28,14 @@ import EcommerceAddProduct from "../pages/Ecommerce/EcommerceAddProduct"
 //Geo Information
 import AddGeo from '../pages/GeoInformation/AddGeo'
 import AddRoute from '../pages/GeoInformation/AddRoute'
+import AddArea from '../pages/GeoInformation/AddArea'
+import AddRegion from '../pages/GeoInformation/AddRegion'
+import AddTerritory from '../pages/GeoInformation/AddTerritory'
+import ListArea from '../pages/GeoInformation/ListArea'
+import ListRegion from '../pages/GeoInformation/ListRegion'
+import ListTerritory from '../pages/GeoInformation/ListTerritory' 
+//Store Information
+import StoreList from '../pages/StoreDetails/StoreList'
 
 // Authentication related pages
 import Login from "../pages/Authentication/Login"
@@ -106,6 +114,19 @@ const authProtectedRoutes = [
 
   // Geo Information
   { path: "/Geo-add", component: AddGeo  },
+  { path: "/routes-add", component: AddRoute  },
+  { path: "/add-area", component: AddArea  },
+  { path: "/add-region", component: AddRegion  },
+  { path: "/add-territory", component: AddTerritory  },
+  { path: "/list-area", component: ListArea  },
+  { path: "/list-region", component: ListRegion  },
+  { path: "/list-territory", component: ListTerritory  },
+ 
+ 
+ 
+
+  // Store Information
+  { path: "/store-list", component: StoreList  },
   { path: "/routes-add", component: AddRoute  },
 
   // User
