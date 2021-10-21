@@ -23,7 +23,7 @@ import { addNewUser } from "../../store/users/action"
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"
 
-const AddUser = () => {
+const AddStore = () => {
 
 
     const [testloading, setloading] = useState(false)
@@ -35,25 +35,28 @@ const AddUser = () => {
         event.preventDefault()
         setloading(true)
         let obj = {}
-        if (values.name) {
-            obj.name = values.name
+        if (values.storeName) {
+            obj.storeName = values.storeName
         }
         if (values.phoneNumber) {
             obj.phoneNumber = values.phoneNumber
         }
-        if (values.email) {
-            obj.email = values.email
+        if (values.storeCode) {
+            obj.storeCode = storeCode.storeCode
         }
-        if (values.role) {
-            obj.role = values.role
+        if (values.OwnerName) {
+            obj.OwnerName = values.OwnerName
         }
-        if (values.password) {
-            obj.password = values.password
+        if (values.OwnerImage) {
+            obj.OwnerImage = values.OwnerImage
         }
-        if (values.confirmPassword) {
-            obj.confirmPassword = values.confirmPassword
+        if (values.route) {
+            obj.route = values.route
         }
-
+        if (values.storeType) {
+            obj.storeType = values.storeType
+        }
+        
 
 
 
@@ -67,42 +70,42 @@ const AddUser = () => {
         <React.Fragment>
             <div className="page-content">
                 <MetaTags>
-                    <title>FieldX | Add User</title>
+                    <title>FieldX | Add Store</title>
                 </MetaTags>
                 <Container fluid={true} >
-                    <Breadcrumbs title="Add New User" breadcrumbItem="Add New User" />
+                    <Breadcrumbs title="Add New User" breadcrumbItem="Add New Store" />
                     <Row>
                         <Col md={6} className='m-auto'>
                             <Card >
                                 <CardBody >
-                                    <CardTitle className="h4 mb-4">Add User</CardTitle>
+                                    <CardTitle className="h4 mb-4">Add Store</CardTitle>
 
                                     <AvForm onSubmit={handleSubmit} >
                                         <Row>
                                             <Col md={6}>
                                                 <FormGroup className="mb-3">
-                                                    <Label htmlFor="formrow-firstname-Input">First name</Label>
+                                                    <Label htmlFor="formrow-storeName-Input">Store name</Label>
                                                     <AvField
-                                                        name="name"
+                                                        name="storeName"
                                                         type="text"
                                                         className="form-control"
-                                                        id="formrow-firstname-Input"
-                                                        placeholder='Type User Name'
-                                                        errorMessage="Enter Name"
+                                                        id="formrow-storeName-Input"
+                                                        placeholder=' Store Name'
+                                                        errorMessage="Enter Store Name"
                                                         validate={{ required: { value: true } }}
                                                     />
                                                 </FormGroup>
                                             </Col>
                                             <Col md={6}>
                                                 <FormGroup className="mb-3">
-                                                    <Label htmlFor="formrow-InputPhone">Phone</Label>
+                                                    <Label htmlFor="formrow-storeCode">Store Code</Label>
                                                     <AvField
-                                                        name='phoneNumber'
+                                                        name='storeCode'
                                                         type="text"
                                                         className="form-control"
-                                                        id="formrow-InputPhone"
-                                                        placeholder='Type User Phone Number'
-                                                        errorMessage="Enter Phone Number"
+                                                        id="formrow-storeCode"
+                                                        placeholder=' Store Code'
+                                                        errorMessage="Enter Store Code"
                                                         validate={{ required: { value: true } }}
                                                     />
                                                 </FormGroup>
@@ -113,34 +116,30 @@ const AddUser = () => {
                                         <Row>
                                             <Col md={6}>
                                                 <FormGroup className="mb-3">
-                                                    <Label htmlFor="formrow-email-Input">Email</Label>
+                                                    <Label htmlFor="formrow-ownerName-Input">Owner Name</Label>
                                                     <AvField
-                                                        name='email'
-                                                        type="email"
+                                                        name='OwnerName'
+                                                        type="text"
                                                         className="form-control"
-                                                        id="formrow-email-Input"
-                                                        placeholder='Type Email address'
-                                                        errorMessage="Enter Email"
+                                                        id="formrow-ownerName-Input"
+                                                        placeholder=' Owner Name'
+                                                        errorMessage="Enter Owner Name"
                                                         validate={{ required: { value: true } }}
                                                     />
                                                 </FormGroup>
                                             </Col>
                                             <Col md={6}>
                                                 <FormGroup className="mb-3">
-                                                    <Label htmlFor="formrow-InputState">Select Role</Label>
+                                                    <Label htmlFor="formrow-InputStorePhone">Phone Number</Label>
                                                     <AvField
-                                                        name='role'
-                                                        id="formrow-InputState"
+                                                        name='phoneNumber'
+                                                        type="text"
                                                         className="form-control"
-                                                        type="select"
-                                                        errorMessage="Select Role"
+                                                        id="formrow-InputStorePhone"
+                                                        placeholder='Store Phone Number'
+                                                        errorMessage="Enter Phone Number"
                                                         validate={{ required: { value: true } }}
-                                                    >
-                                                        <option>Choose...</option>
-                                                        <option>Organization</option>
-                                                        <option>...</option>
-
-                                                    </AvField>
+                                                    />
                                                 </FormGroup>
                                             </Col>
 
@@ -149,9 +148,9 @@ const AddUser = () => {
                                             <Col md={12}>
 
                                                 <FormGroup className="mb-3">
-                                                    <Label htmlFor="formFile" className="form-label">Upload User Image</Label>
+                                                    <Label htmlFor="formFile" className="form-label">Upload Owner Image</Label>
                                                     <AvField 
-                                                    name='userImage' 
+                                                    name='OwnerImage' 
                                                     className="form-control" 
                                                     type="file" 
                                                     id="formFile"
@@ -167,41 +166,50 @@ const AddUser = () => {
                                         <Row>
 
 
-                                            <Col md={6}>
+                                        <Col md={6}>
                                                 <FormGroup className="mb-3">
-                                                    <Label htmlFor="formrow-password-Input">Password</Label>
+                                                    <Label htmlFor="formrow-StoreType">Store Type</Label>
                                                     <AvField
-                                                        name='password'
-                                                        type="password"
+                                                        name='storeType'
+                                                        id="formrow-StoreType"
                                                         className="form-control"
-                                                        id="formrow-password-Input"
-                                                        placeholder='Type Password'
-                                                        errorMessage="Enter Password"
+                                                        type="select"
+                                                        errorMessage="Select Type"
                                                         validate={{ required: { value: true } }}
-                                                    />
+                                                    >
+                                                        <option>Choose...</option>
+                                                        <option>Grocery</option>
+                                                        <option>...</option>
+
+                                                    </AvField>
                                                 </FormGroup>
                                             </Col>
                                             <Col md={6}>
                                                 <FormGroup className="mb-3">
-                                                    <Label htmlFor="formrow-confirmPassword-Input">Confirm Password</Label>
+                                                    <Label htmlFor="formrow-Route">Route</Label>
                                                     <AvField
-                                                        name='confirmPassword'
-                                                        type="password"
+                                                        name='route'
+                                                        id="formrow-Route"
                                                         className="form-control"
-                                                        id="formrow-confirmPassword-Input"
-                                                        placeholder='Type Confirm Password'
-                                                        errorMessage="Confrim Password"
+                                                        type="select"
+                                                        errorMessage="Select Route"
                                                         validate={{ required: { value: true } }}
-                                                    />
+                                                    >
+                                                        <option>Choose...</option>
+                                                        <option>Gulshan</option>
+                                                        <option>Dhanmondi</option>
+
+                                                    </AvField>
                                                 </FormGroup>
                                             </Col>
+                                           
 
                                         </Row>
 
 
                                         <div>
                                             <button type="submit" className="btn btn-primary w-md">
-                                                Save User
+                                                Save Store
                                             </button>
                                         </div>
                                     </AvForm>
@@ -223,4 +231,4 @@ const AddUser = () => {
 }
 
 
-export default AddUser
+export default AddStore

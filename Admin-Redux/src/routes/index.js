@@ -37,6 +37,7 @@ import ListRegion from '../pages/GeoInformation/ListRegion'
 import ListTerritory from '../pages/GeoInformation/ListTerritory' 
 //Store Information
 import StoreList from '../pages/StoreDetails/StoreList'
+import StoreAdd from '../pages/StoreDetails/StoreAdd'
 
 // Authentication related pages
 import Login from "../pages/Authentication/Login"
@@ -133,7 +134,7 @@ const authProtectedRoutes = [
 
   // Store Information
   { path: "/store-list", component: StoreList  },
-  { path: "/routes-add", component: AddRoute  },
+  { path: "/add-newStore", component: StoreAdd  },
 
   // User
   { path: "/user-list", component: UserList  },

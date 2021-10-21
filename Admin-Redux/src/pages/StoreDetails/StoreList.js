@@ -125,7 +125,7 @@ class StoreList extends Component {
                       <Col >
                         <div className="mt-2 ">
                           <Link
-                            to=""
+                            to="/add-newStore"
                             className="btn btn-primary btn-md"
                           >
                             Add Store
